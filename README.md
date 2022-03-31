@@ -5,11 +5,12 @@ Mini SRC assembler for school project
 ```
 git clone https://github.com/EmperorPenguin18/assembler
 cd assembler
-make
+make release
 make install #as root
 ```
 
 ## Usage
 ```
-assembler FILE
+assembler FILEIN FILEOUT
 ```
+The output can be imported into a memory component in Logisim-evolution
