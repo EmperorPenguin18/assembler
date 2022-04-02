@@ -6,6 +6,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifdef _WIN32
+size_t getline(char **, size_t *, FILE *);
+#endif
+
 int check_indexed(const char *);
 
 void convert_register(char *);
