@@ -4,6 +4,7 @@
 
 #include "assembler.h"
 
+#ifdef _WIN32
 size_t getline(char **lineptr, size_t *n, FILE *stream) {
     char *bufptr = NULL;
     char *p = bufptr;
