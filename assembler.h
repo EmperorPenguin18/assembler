@@ -10,7 +10,7 @@
 size_t getline(char **, size_t *, FILE *);
 #endif
 
-int check_indexed(const char *);
+int check_indexed(const char[]);
 
 void convert_register(char *);
 
@@ -24,7 +24,7 @@ void convert_const(char *);
 
 void convert_indexed(char *);
 
-char* convert_line(const char *);
+char* convert_line(const char[]);
 
 void removechar(char *, const int);
 

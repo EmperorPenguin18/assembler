@@ -58,7 +58,7 @@ size_t getline(char **lineptr, size_t *n, FILE *stream) {
 }
 #endif
 
-int check_indexed(const char *s) {
+int check_indexed(const char s[]) {
 	for (int i = 0; i < strlen(s); i++) {
 		if (s[i] == '(') {
 #ifdef DEBUG
@@ -77,7 +77,7 @@ void convert_register(char *s) {
 #ifdef DEBUG
 	printf("convert_register\ninput: %s\n", s);
 #endif
-	char output[19];
+	char output[19] = "";
 	int index = check_indexed(s);
 	if (index++ != -1) {
 		int i;
@@ -227,7 +227,7 @@ void convert_indexed(char *s) {
 #ifdef DEBUG
 	printf("convert_indexed\ninput: %s\n", s);
 #endif
-	char output[19];
+	char output[19] = "";
 	int i;
 	for (i = 0; i < strlen(s); i++) if (s[i] == '(') break;
 	strncpy(output, s, i-1);
@@ -238,8 +238,8 @@ void convert_indexed(char *s) {
 #endif
 }
 
-char* convert_line(const char *line) {
-	char binaryString[32];
+char* convert_line(const char line[]) {
+	char binaryString[32] = "";
 	char *instruction = calloc(4, sizeof(char)*4);
 	char *ra = calloc(19, sizeof(char)*19);
 	char *rb = calloc(19, sizeof(char)*19);
