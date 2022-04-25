@@ -2,7 +2,7 @@
 Mini SRC assembler for school project
 
 ## Dependencies
-The GNU C compiler, which is availabe through MinGW on Windows
+The GNU C compiler, which is available through MinGW on Windows
 
 ## Installation
 Windows

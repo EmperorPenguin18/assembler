@@ -81,7 +81,7 @@ void convert_register(char *s) {
 	int index = check_indexed(s);
 	if (index++ != -1) {
 		int i;
-		for (i = index; i < strlen(s+index); i++) if (s[index+i] == ')') break;
+		for (i = index; i < strlen(s+index); i++) if (s[i] == ')') break;
 		strncpy(output, s+index, i-1);
 	}
 	else {
@@ -91,6 +91,7 @@ void convert_register(char *s) {
 		fprintf(stderr, "Unrecognized register: %s\n", s);
 		exit(EXIT_FAILURE);
 	}
+	printf("debug output: %s\n", output);
 	sprintf(s, "%04ld", dec_to_binary((int)strtol(output+1, NULL, 10)));
 #ifdef DEBUG
 	printf("output: %s\n", s);
@@ -230,7 +231,7 @@ void convert_indexed(char *s) {
 	char output[19] = "";
 	int i;
 	for (i = 0; i < strlen(s); i++) if (s[i] == '(') break;
-	strncpy(output, s, i-1);
+	strncpy(output, s, i);
 	strcpy(s, output);
 	convert_const(s);
 #ifdef DEBUG

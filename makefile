@@ -9,3 +9,7 @@ install: assembler.h assembler
 	@mkdir -p /usr/bin/
 	@cp assembler.h /usr/include/assembler.h
 	@mv assembler /usr/bin/assembler
+
+clean:
+	rm -f assembler
+	rm -f *.txt
